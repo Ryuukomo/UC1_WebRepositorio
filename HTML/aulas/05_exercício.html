@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title> Aula de Formulários em HTML </title>
+</head>
+<body>
+    
+    <h1>Cadástro de Usúarios</h1>
+
+    <form>
+        
+        <h2>Informaçõe Pessoais</h2>
+
+        <p>Nome Completo:<br/>
+            <input size="45" minlength="10" required>
+        </p>
+      
+        <p>E-mail:<br/>
+            <input type="email" size="20" required>
+        </p>   
+
+        <p>Senha:<br/>
+            <input type="text" size="20" required>
+        </p>
+
+        <p>Data de Nascimento:<br/>
+            <input type="date" size="5" required>
+        </p>
+
+        <p>Interesses:<br/>
+        
+            <input type="checkbox" required>Programação <br/>
+            <input type="checkbox" required>Design <br/>
+            <input type="checkbox" required> Análise de Dados
+      
+        </p>
+
+        <h2>Informaçõe Pessoais</h2>
+
+        <p>CEP:<br/>
+            <input type="text" size="5" minlength="9" maxlength="9" required>
+        </p>
+        
+        <p>Endereço Completo:<br/>
+            <input type="text" size="50" required>
+        </p>
+
+        <p>Cidade:<br/>
+
+            
+            <select>
+
+            <option value="são carlos">São Carlos</option>
+            <option value="são paulo">São Paulo</option>
+            <option value="rio claro">Rio Claro</option>
+
+            </select>
+  
+        </p>
+
+        <h2>Preferências</h2>
+
+        <p>Tipo de entrega:<br/>
+
+            <input type="radio" name="entrega"> PAC
+            <input type="radio" name="entrega"> Sedex
+            <input type="radio" name="entrega"> Correios
+        </p>
+
+        <p>Observações:<br/>
+
+            <textarea id="mensagem" name="mensagem" rows="4" cols="50" placeholder="Escreva sua mensagem..."></textarea>
+           
+        </p>
+
+        <button>Enviar</button>
+    
+    </form>
+
+</body>
+</html>
