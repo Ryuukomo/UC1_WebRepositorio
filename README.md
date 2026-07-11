@@ -5,7 +5,7 @@
 
 
 
- <details><summary style="font-size:20px;">Como enviar coisas para o Github ?</summary>
+ <details><summary style="font-size:200px;">Como enviar coisas para o Github ?</summary>
 
 - Tópico Principal
     - Sub-tópico A
