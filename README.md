@@ -1,29 +1,39 @@
- 
-<div style="font-size: 30px;" > Primeiro Readme de Repositório </div>
+# Primeiro Readme de Repositório
 
-<span style="color: red; font-size: 16px;  padding: 4px 10px;  "> 
-^_^ ^_^ ^_^ ^_^ ^_^ ^_^ ^_^ ^_^ ^_^ ^_^ ^_^ ^_^ ^_^ 
-</span>
-<br>
+### `^_^ ^_^ ^_^ ^_^ ^_^ ^_^ ^_^ ^_^ ^_^ ^_^ ^_^ ^_^ ^_^`
 <br>
 
-<span style="background-color: #1b0044; padding-right: 250px; border-radius: 8px;"> Como enviar coisas para o Github ? 
+>### <details><summary>Como enviar coisas para o Github ? 
+</summary></details>
 
-<div style="background-color: #0e0024;">
+
+------------------------------------------------------------------------------------------
+
 - Instale o **Git** e o **Github Desktop**
+
+------------------------------------------------------------------------------------------
 
 - Abrir **cmd** diretamente da pasta e digite `git init`
 
+------------------------------------------------------------------------------------------
+
 - Abrir pasta do projeto no *Github Desktop*
+
+------------------------------------------------------------------------------------------
 
 - Fazer **commit** no *Github Desktop*, e clicar em `push` para enviar 
     - Se for primeira vez, **publique** com o botão `publish`
     - Lembrar de deixar  o projeto **público** 
 
-</div>
-</span>
+------------------------------------------------------------------------------------------
+<br>
 
-<span style="background-color: #1b0044;; padding-right: 230px; border-radius: 8px;"> Como enviar coisas para o Github ? 
+>### <details><summary>Como enviar coisas para o Github ?</summary></details> 
 
 
-- Abrir cmd e digitar **git clone** + `link do repositório` </span>
+------------------------------------------------------------------------------------------
+
+- Abrir cmd e digitar **git clone** + `link do repositório`
+
+
+------------------------------------------------------------------------------------------
