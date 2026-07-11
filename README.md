@@ -1,5 +1,5 @@
  
-<span style="font-size: 30px;" > Primeiro Readme de Repositório </span>
+<div style="font-size: 30px;" > Primeiro Readme de Repositório </div>
 
 <span style="color: red; font-size: 16px;  padding: 4px 10px;  "> 
 ^_^ ^_^ ^_^ ^_^ ^_^ ^_^ ^_^ ^_^ ^_^ ^_^ ^_^ ^_^ ^_^ 
