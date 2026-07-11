@@ -1,9 +1,9 @@
-# Primeiro Readme de Repositório
+# PRIMEIRO README 
 
-### `^_^ ^_^ ^_^ ^_^ ^_^ ^_^ ^_^ ^_^ ^_^ ^_^ ^_^ ^_^ ^_^`
+### `^_^ ^_^ ^_^ ^_^ ^_^ ^_^ ^_^ ^_^ ^_^ ^_^ ^_^ ^_^ ^_^ ^_^ ^_^ ^_^ ^_^ ^_^`
 <br>
 
->### <details><summary>Como enviar coisas para o Github ? 
+>### <details><summary> `Como enviar coisas para o Github ?`
 </summary></details>
 
 
@@ -28,7 +28,7 @@
 ------------------------------------------------------------------------------------------
 <br>
 
->### <details><summary>Como enviar coisas para o Github ?</summary></details> 
+>### <details><summary>`Como enviar coisas para o Github ?`</summary></details> 
 
 
 ------------------------------------------------------------------------------------------
