@@ -8,8 +8,9 @@
 
 <details > <summary> Guia <hr></summary> 
 
-
 <details> <summary>Como enviar projetos ? </summary>
+
+---
 
 \----------------------------------------------------------------------------------------------------------------------------------- <br>
 
@@ -26,31 +27,38 @@
 \-----------------------------------------------------------------------------------------------------------------------------------
 
 ---
-- <details> <summary> Fazer **commit** no *Github Desktop*, e clicar em `push` para nviar  </summary> <br> 
+* <details> <hr> <summary> Fazer **commit** no *Github Desktop*, e clicar em `push` para nviar  </summary> 
 
 	- Se for primeira vez, **publique** com o botão `publish`
 	- Lembrar de deixar  o projeto **público** 
-    
-</detail>
+
 <hr>
 
 \-----------------------------------------------------------------------------------------------------------------------------------
 </details>
 
+
+
 ---
 
-<details>
-<summary>Como baixar repositórios do Github ?
-</summary>
+<details> <summary>Como baixar repositórios do Github ?</summary>
 
 ------------------------------------------------------------------------------------------
+
+\-----------------------------------------------------------------------------------------------------------------------------------
 
 - Abrir cmd e digitar **git clone** + `link do repositório`
 
 \-----------------------------------------------------------------------------------------------------------------------------------
+
  </details>
- 
+
 ---
+
+
+</details>
+
+
 </details>
 
 
