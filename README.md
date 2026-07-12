@@ -27,7 +27,7 @@
 \-----------------------------------------------------------------------------------------------------------------------------------
 
 ---
-* <details> <hr> <summary> Fazer **commit** no *Github Desktop*, e clicar em `push` para nviar  </summary> 
+* <details>  <summary> Fazer **commit** no *Github Desktop*, e clicar em `push` para nviar  </summary> <br>
 
 	- Se for primeira vez, **publique** com o botão `publish`
 	- Lembrar de deixar  o projeto **público** 
