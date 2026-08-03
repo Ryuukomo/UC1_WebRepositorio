@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gothic Monochromatic Forest - RAIG Engine</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #050505;
+        }
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="renderCanvas"></canvas>
+
+    <script>
+        const canvas = document.getElementById('renderCanvas');
+        const ctx = canvas.getContext('2d');
+
+        let width, height;
+        let clouds = [];
+        let mountains = [];
+        let trees = [];
+        let fogParticles = [];
+
+        function init() {
+            resize();
+            createEnvironment();
+            animate();
+        }
+
+        function resize() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        }
+
+        window.addEventListener('resize', () => {
+            resize();
+            createEnvironment();
+        });
+
+        class Cloud {
+            constructor() {
+                this.reset();
+            }
+            reset() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height * 0.4;
+                this.size = Math.random() * 100 + 50;
+                this.speed = Math.random() * 0.2 + 0.05;
+                this.opacity = Math.random() * 0.3;
+            }
+            update() {
+                this.x += this.speed;
+                if (this.x - this.size > width) this.x = -this.size;
+            }
+            draw() {
+                ctx.fillStyle = `rgba(180, 180, 180, ${this.opacity})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        class Mountain {
+            constructor(level, color, speed) {
+                this.level = level;
+                this.color = color;
+                this.speed = speed;
+                this.points = [];
+                this.offset = 0;
+                this.generate();
+            }
+            generate() {
+                this.points = [];
+                let step = 40;
+                for (let i = 0; i <= width + step; i += step) {
+                    let y = height * (0.4 + this.level * 0.15) + (Math.random() * 100 - 50);
+                    this.points.push({x: i, y: y});
+                }
+            }
+            update() {
+                this.offset -= this.speed;
+                if (Math.abs(this.offset) >= 40) {
+                    this.offset = 0;
+                    this.points.shift();
+                    let last = this.points[this.points.length - 1];
+                    let y = height * (0.4 + this.level * 0.15) + (Math.random() * 100 - 50);
+                    this.points.push({x: last.x + 40, y: y});
+                }
+            }
+            draw() {
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.moveTo(0, height);
+                for (let i = 0; i < this.points.length; i++) {
+                    ctx.lineTo(this.points[i].x + this.offset, this.points[i].y);
+                }
+                ctx.lineTo(width, height);
+                ctx.fill();
+            }
+        }
+
+        class Tree {
+            constructor(side) {
+                this.side = side; // 'left' or 'right'
+                this.reset();
+            }
+            reset() {
+                this.x = this.side === 'left' ? Math.random() * (width * 0.2) : width - (Math.random() * (width * 0.2));
+                this.y = height * 0.6 + Math.random() * (height * 0.4);
+                this.scale = (this.y / height) * 1.5;
+                this.opacity = (this.y / height);
+            }
+            draw() {
+                ctx.save();
+                ctx.translate(this.x, this.y);
+                ctx.scale(this.scale, this.scale);
+                ctx.fillStyle = `rgba(10, 10, 10, ${this.opacity})`;
+                
+                // Trunk
+                ctx.fillRect(-5, 0, 10, 20);
+                // Pine Body
+                ctx.beginPath();
+                ctx.moveTo(0, -100);
+                ctx.lineTo(30, -40);
+                ctx.lineTo(15, -40);
+                ctx.lineTo(40, 10);
+                ctx.lineTo(-40, 10);
+                ctx.lineTo(-15, -40);
+                ctx.lineTo(-30, -40);
+                ctx.closePath();
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+
+        class Fog {
+            constructor() {
+                this.reset();
+            }
+            reset() {
+                this.x = Math.random() * width;
+                this.y = height * 0.7 + Math.random() * (height * 0.3);
+                this.vx = Math.random() * 0.5 - 0.25;
+                this.size = Math.random() * 200 + 100;
+                this.alpha = Math.random() * 0.2;
+            }
+            update() {
+                this.x += this.vx;
+                if (this.x < -this.size) this.x = width + this.size;
+                if (this.x > width + this.size) this.x = -this.size;
+            }
+            draw() {
+                let grad = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.size);
+                grad.addColorStop(0, `rgba(200, 200, 200, ${this.alpha})`);
+                grad.addColorStop(1, 'rgba(200, 200, 200, 0)');
+                ctx.fillStyle = grad;
+                ctx.fillRect(this.x - this.size, this.y - this.size, this.size * 2, this.size * 2);
+            }
+        }
+
+        function createEnvironment() {
+            clouds = [];
+            for (let i = 0; i < 15; i++) clouds.push(new Cloud());
+
+            mountains = [];
+            mountains.push(new Mountain(1, '#222', 0.2));
+            mountains.push(new Mountain(2, '#181818', 0.5));
+            mountains.push(new Mountain(3, '#0d0d0d', 0.8));
+
+            trees = [];
+            for (let i = 0; i < 12; i++) {
+                trees.push(new Tree('left'));
+                trees.push(new Tree('right'));
+            }
+
+            fogParticles = [];
+            for (let i = 0; i < 20; i++) fogParticles.push(new Fog());
+        }
+
+        function drawSky() {
+            let grad = ctx.createLinearGradient(0, 0, 0, height);
+            grad.addColorStop(0, '#222');
+            grad.addColorStop(0.5, '#444');
+            grad.addColorStop(1, '#111');
+            ctx.fillStyle = grad;
+            ctx.fillRect(0, 0, width, height);
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            
+            drawSky();
+
+            clouds.forEach(c => { c.update(); c.draw(); });
+            
+            mountains.forEach(m => { m.update(); m.draw(); });
+
+            trees.sort((a, b) => a.y - b.y).forEach(t => t.draw());
+
+            fogParticles.forEach(f => { f.update(); f.draw(); });
+
+            // Glitch overlay effect subtle
+            if(Math.random() > 0.98) {
+                ctx.fillStyle = "rgba(255,255,255,0.02)";
+                ctx.fillRect(0, Math.random() * height, width, 2);
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        init();
+    </script>
+</body>
+</html>

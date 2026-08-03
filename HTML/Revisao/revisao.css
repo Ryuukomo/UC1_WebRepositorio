@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+
+body{
+    font-family: "Fredericka the Great", serif;
+    font-weight: 400;
+    margin: 140px;
+    text-align: center;
+}
+
+.cabecalho{
+    background-image: url("https://www.shutterstock.com/image-vector/frozen-mountain-valley-landscape-viewed-260nw-2628669193.jpg") ;
+    height: 280px;
+    /* background-size: cover; */
+    background-repeat: no-repeat;
+}
+
+.titulo{
+    color: #300f6e;
+     font-size: 53px;
+}
+
+.subtitulo{
+    color: #8e7aff;
+    font-size: 32px;
+    margin-top: -20px;
+    
+}
+
+.info{
+    color: #300f6e;
+    font-size: 32px;
+    margin-top: -16px;
+}
+
+
