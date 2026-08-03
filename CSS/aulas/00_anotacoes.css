@@ -1,6 +1,6 @@
 /*
 COMANDOS CSS
-
+-----------------------------------------------------------
 font-weight = negrito
 
 - bold;
@@ -8,18 +8,42 @@ font-weight = negrito
 
 -----------------------------------------------------------
 font-size = tamanho da letra
+
+- 25px;
+
 -----------------------------------------------------------
 background-color = cor de fundo ( pode ser transparent)
+
+- #FF9800;
+- transparent;
+
 -----------------------------------------------------------
 color = cor letra 
+
+- #FF9800;
+
 -----------------------------------------------------------
 text-align = alinha texto na tela 
+
+- center
+- right(direita)
+- left(esquerda)
+
 -----------------------------------------------------------
 width = escala de largura
+
+- 28px;
+
 -----------------------------------------------------------
 margin = aumenta espaço exterior 
+
+- 300px
+
 -----------------------------------------------------------
 padding = espaçamento de área interior
+
+- 20px;
+
 -----------------------------------------------------------
 border = contorno botão 
 
@@ -28,19 +52,19 @@ border = contorno botão
 
 -----------------------------------------------------------
 border-radius = arredonda bordas
+
+- 10px;
+
 -----------------------------------------------------------
 box-shadow = sombra / brilho
 
 - 1px 2px 3px #CCCCCC;
+
 -----------------------------------------------------------
 cursor = forma do cursor
+
+
 -----------------------------------------------------------
-
-
-
-
-
-
 
 
 
