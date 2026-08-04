@@ -9,8 +9,9 @@ body{
 
 .cabecalho{
     background-image: url("https://www.shutterstock.com/image-vector/frozen-mountain-valley-landscape-viewed-260nw-2628669193.jpg") ;
-    height: 280px;
-    /* background-size: cover; */
+    width: 100%;
+
+    background-size:100%;;
     background-repeat: no-repeat;
 }
 

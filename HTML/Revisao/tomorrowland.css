@@ -1,0 +1,84 @@
+@font-face {
+    font-family: Europa;
+    src: url('./europa-regular-webfont.ttf');
+}
+
+body{
+    font-family: Europa;
+    background-color: #000;
+    color: #FFF;
+}
+
+button{
+    font-family: Europa;
+}
+
+.cabecalho{
+    text-align: center;
+    position: relative;
+}
+
+.titulo{
+    font-size: 45px;
+    margin-bottom: -15px;
+}
+
+.localizacao{
+    font-size: 20px;
+}
+
+.data{
+    font-size: 20px;
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+
+.chamada{
+    margin-bottom: 40px;
+}
+
+.registrar{
+    background-color: #0E6757;
+    color: white;
+   
+}
+
+
+.menu-superior{
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 50px;
+}
+
+.logo{
+    filter: invert();
+    width: 30px;
+}
+
+.menubotoes{
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.botaodireito{
+    background-color: #000;
+    color:#FFF;
+    border:none;
+    border-radius: 20px;
+    padding: 8px 12px;
+    font-size: 15px;
+    font-weight: bold;
+
+}
+
+video{
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+}
