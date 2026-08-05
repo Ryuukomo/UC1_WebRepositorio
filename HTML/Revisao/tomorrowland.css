@@ -7,6 +7,7 @@ body{
     font-family: Europa;
     background-color: #000;
     color: #FFF;
+    margin: 0;
 }
 
 button{
@@ -16,21 +17,23 @@ button{
 .cabecalho{
     text-align: center;
     position: relative;
+    
 }
 
 .titulo{
     font-size: 45px;
-    margin-bottom: -15px;
+    margin-top: 95px;
+    margin-bottom: -1px;
 }
 
 .localizacao{
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .data{
-    font-size: 20px;
-    margin-top: 70px;
-    margin-bottom: 70px;
+    font-size: 18px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .chamada{
@@ -45,12 +48,44 @@ button{
 
 
 .menu-superior{
-    background-color: red;
+    background-color: #081816;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px 50px;
 }
+
+.menu-flutuante{
+    background-color: red;
+    
+    position:fixed;
+    margin-top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+    border-radius: 40px;
+   
+}
+
+.menu-flutuante ul{
+    display: flex;
+    list-style-type: none;
+    gap: 25px;
+    padding: 0px 40px;
+
+       
+    }
+
+.fade{
+    background-color: black;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
 
 .logo{
     filter: invert();
